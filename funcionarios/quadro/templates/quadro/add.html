@@ -1,0 +1,29 @@
+{% extends "quadro/base.html" %}
+
+{% block body %}
+  <h3 class="text-center mb-4">Adicionar funcionário</h3>
+  {% if success %}
+    <div class="alert alert-sucess" role="alert">
+      Funcionário adicionado com sucesso.
+      <a href="{% url 'index' %}" class="alert-link">Voltar para pagina principal</a>
+    </div>
+  {% else %}
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="card text-white bg-info mb-3">
+          <div class="card-header">
+              <i class="fa-solid fa-address-card fa-lg"></i>Funcionário registrado
+          </div>
+            <div class="card-body">
+              <form action="{% url 'add' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+                <a href="{% url 'index' %}" class="btn btn-secondary">Cancelar</a>
+               </form>
+             </div>
+          </div>
+        </div>
+      </div>
+    {% endif%}
+{% endblock %}
