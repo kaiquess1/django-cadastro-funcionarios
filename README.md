@@ -1,4 +1,6 @@
-## CRUD com Django
+## CRUD com Django - Create (criar), Read (ler), Update (atualizar) e Delete (apagar). 
+
+
 
 Desenvolvimento de um sistema para **cadastro de funcionários** utilizando o framework Django. 
 
